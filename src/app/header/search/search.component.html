@@ -1,14 +1,13 @@
-<form class="d-flex input-group w-auto" (ngSubmit)="search()">
+<form class="d-flex input-group w-auto" >
 
 
   <input
     type="text"
     placeholder="Search city"
-    [(ngModel)]="cityInput"
-    name="cityInput"
+    [formControl]="form"
     class="form-control rounded"
   />
-  <button class="btn btn-outline-primary rounded border" type="submit">
-    <i class="fa fa-search fa-sm"></i>
-  </button>
+  <!-- <button class="btn btn-outline-primary rounded border" type="submit" (click)="getUserLocation()">
+    <i class="fa fa-map-marker fa-sm"></i>
+  </button> -->
 </form>
