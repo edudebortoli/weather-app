@@ -1,16 +1,14 @@
-import { BodyModule } from './../body/body.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { InfoRoutingModule } from './info-routing.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-  ],
-  exports: [
-
+    CommonModule,
+    InfoRoutingModule
   ]
 })
-export class HeaderModule { }
+export class InfoModule { }

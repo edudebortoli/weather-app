@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Weather } from './../../interfaces/weather';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {
   debounceTime,
@@ -23,7 +24,7 @@ export class SearchComponent implements OnInit {
   results$!: Observable<any>;
 
   cityData!: City;
-  forecastData: any;
+  forecastData!: Weather;
 
   constructor(
     private location: LocationService,
