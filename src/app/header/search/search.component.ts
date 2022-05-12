@@ -1,3 +1,4 @@
+import { WeatherService } from './../../services/weather.service';
 import { City } from './../../interfaces/city';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
@@ -18,15 +19,17 @@ export class SearchComponent implements OnInit {
     lat: 0,
     lon: 0,
   };
+  forecastData: any
 
   constructor(
     private location: LocationService,
+    private weather: WeatherService,
     private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {}
 
-  async search() {
+  search() {
     console.log(`searching for: ${this.cityInput}`);
 
     this.location.search(this.cityInput).subscribe({
@@ -42,11 +45,9 @@ export class SearchComponent implements OnInit {
           };
           this.toastr.success(
             `${this.cityData.name}, ${this.cityData.country} Found!`
-          )
+          );
           this.weatherSearch(this.cityData);
-
           //success route ->
-
         } else {
           this.toastr.error(
             `Try using cityname, country or state. \n
@@ -56,7 +57,6 @@ export class SearchComponent implements OnInit {
         }
       },
     });
-    console.log('fim');
   }
 
   private fullObject(object: Object): boolean {
@@ -72,6 +72,15 @@ export class SearchComponent implements OnInit {
   }
 
   weatherSearch(cityData: City) {
+    console.table(cityData)
 
+    this.weather.getForecast(cityData).subscribe({
+      next: (forecast: any) => {
+        console.log(forecast)
+        let algo = new Date(forecast.current.dt * 1000)
+        console.log(algo.getDay())
+        return
+      }
+    })
   }
 }
