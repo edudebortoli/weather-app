@@ -1,4 +1,7 @@
 <app-header  (cityFullfilled)="getWeather($event)"></app-header>
 <!-- (cityFullfilled)="getWeather($event)"> -->
 <!-- <router-outlet></router-outlet> -->
-<app-body *ngIf="forecastData" [cityData]="cityData" [forecastData]="forecastData"></app-body>
+<app-body *ngIf="forecastData; else info" [cityData]="cityData" [forecastData]="forecastData"></app-body>
+<ng-template #info>
+  <app-info #info></app-info>
+</ng-template>
