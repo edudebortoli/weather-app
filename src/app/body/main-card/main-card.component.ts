@@ -1,6 +1,7 @@
 import { City } from './../../interfaces/city';
 import { Component, Input, OnInit } from '@angular/core';
 import { CurrentWeather } from '../../interfaces/current-weather'
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-main-card',
@@ -16,7 +17,7 @@ export class MainCardComponent implements OnInit {
   
   day = 'asd'
 
-  constructor() { }
+  constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
   }

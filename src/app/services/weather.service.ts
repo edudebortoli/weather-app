@@ -17,4 +17,8 @@ export class WeatherService {
       `${this.API}&lat=${lat}&lon=${lon}&units=${this.UNITS}`
     );
   }
+
+  getIcon(icon: string) {
+    return `https://openweathermap.org/img/wn/${icon}.png`
+  }
 }

@@ -31,7 +31,7 @@ export class AppComponent {
         this.forecastData = {
           current: {
             date: new Date(forecast.current.dt * 1000),
-            icon: forecast.current.weather[0].icon,
+            icon: this.weather.getIcon(forecast.current.weather[0].icon),
             description: forecast.current.weather[0].description,
             main: forecast.current.weather[0].main,
             temp: Math.round(forecast.current.temp),
@@ -44,7 +44,7 @@ export class AppComponent {
         for(let i = 1; i < (this.FORECASTDAYS + 1); i++) {
           let dailyData = {
             date: new Date(forecast.daily[i].dt *1000),
-            icon: forecast.daily[i].weather[0].icon,
+            icon: this.weather.getIcon(forecast.daily[i].weather[0].icon),
             min: Math.round(forecast.daily[i].temp.min),
             max: Math.round(forecast.daily[i].temp.max)
           }

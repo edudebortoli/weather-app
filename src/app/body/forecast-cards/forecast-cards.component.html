@@ -2,7 +2,9 @@
   <div class="card border-1">
     <div class="row m-1 align-items-center">
       <div class="col-md-4 text-start">{{day.date | date: 'EEEE'}}</div>
-      <div class="col-md-4 text-center">{{day.icon}}</div>
+      <div class="col-md-4 text-center">
+        <img src="{{day.icon}}">
+      </div>
       <div class="col-md-4 text-end">
         <span class="text-muted">{{day.min}}°/</span>
         <span>{{day.max}}</span>
