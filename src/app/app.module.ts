@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { SearchComponent } from './header/search/search.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BodyComponent } from './body/body.component';
 import { MainCardComponent } from './body/main-card/main-card.component';
@@ -17,7 +16,7 @@ import { ForecastCardsComponent } from './body/forecast-cards/forecast-cards.com
 import { InfoComponent } from './info/info.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SearchComponent, BodyComponent, MainCardComponent, ForecastCardsComponent, InfoComponent],
+  declarations: [AppComponent, HeaderComponent, BodyComponent, MainCardComponent, ForecastCardsComponent, InfoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

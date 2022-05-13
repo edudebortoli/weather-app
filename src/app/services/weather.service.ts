@@ -12,9 +12,9 @@ export class WeatherService {
   UNITS = 'metric'
   constructor(private httpClient: HttpClient) { }
 
-  getForecast(cityData: City) {
+  getForecast(lat: number, lon: number) {
     return this.httpClient.get(
-      `${this.API}&lat=${cityData.lat}&lon=${cityData.lon}&units=${this.UNITS}`
+      `${this.API}&lat=${lat}&lon=${lon}&units=${this.UNITS}`
     );
   }
 }

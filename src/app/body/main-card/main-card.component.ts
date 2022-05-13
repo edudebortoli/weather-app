@@ -1,7 +1,6 @@
-import { Weather } from './../../interfaces/weather';
 import { City } from './../../interfaces/city';
-import { Component, OnInit } from '@angular/core';
-import { Day } from 'src/app/enum/day';
+import { Component, Input, OnInit } from '@angular/core';
+import { CurrentWeather } from '../../interfaces/current-weather'
 
 @Component({
   selector: 'app-main-card',
@@ -10,8 +9,11 @@ import { Day } from 'src/app/enum/day';
 })
 export class MainCardComponent implements OnInit {
 
+  @Input()
   city!: City
-  weather!: Weather
+  @Input()
+  weather!: CurrentWeather
+  
   day = 'asd'
 
   constructor() { }

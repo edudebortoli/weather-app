@@ -1,4 +1,4 @@
-export interface Weather {
+export interface CurrentWeather {
   date: Date,
   icon: string,
   description: string,

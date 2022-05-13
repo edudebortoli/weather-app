@@ -1,6 +1,3 @@
-export interface dailyWeather {
-  date: Date,
-  icon: string,
-  min: number,
-  max: number
+export interface DailyWeather {
+  date: Date, icon: string, min: number, max: number;
 }

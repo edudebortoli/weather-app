@@ -1,5 +1,7 @@
 import { City } from './../interfaces/city';
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { FullWeather } from '../interfaces/full-weather';
+import { CurrentWeather } from '../interfaces/current-weather';
 
 @Component({
   selector: 'app-body',
@@ -7,15 +9,17 @@ import { Component, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
+  
+  @Input()
+  forecastData!: FullWeather
+  
+  @Input()
+  cityData!: City
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  @Output()
-  cityData!: City;
-
-  @Output()
-  forecastData: any
 }
+
