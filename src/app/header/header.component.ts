@@ -45,7 +45,6 @@ export class HeaderComponent implements OnInit {
   }
 
   search(cityInput: string) {
-    console.log(`searching for: ${cityInput}`);
 
     this.location.search(cityInput).subscribe({
       next: (data: any) => {
@@ -58,7 +57,6 @@ export class HeaderComponent implements OnInit {
             lat: data[0].lat,
             lon: data[0].lon,
           }
-          console.table(this.cityData)
           this.cityFullfilled.emit(this.cityData)
 
           this.toastr.success(

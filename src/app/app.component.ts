@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { City } from './interfaces/city';
 import { FullWeather } from './interfaces/full-weather';
 import { WeatherService } from './services/weather.service';
@@ -11,11 +11,11 @@ import { WeatherService } from './services/weather.service';
 export class AppComponent {
   title = 'weather-app';
 
-  readonly FORECASTDAYS = 7
+  readonly FORECASTDAYS = 5
   // O Máximo são 7 dias
   
-  forecastData!: FullWeather
   cityData!: City  
+  forecastData!: FullWeather
 
   constructor(
     private weather: WeatherService
@@ -48,9 +48,7 @@ export class AppComponent {
             min: Math.round(forecast.daily[i].temp.min),
             max: Math.round(forecast.daily[i].temp.max)
           }
-          console.log(dailyData)
           this.forecastData.daily.push(dailyData)
-          console.log(this.forecastData)
         }
 
         return;
