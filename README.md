@@ -1,6 +1,7 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+The WeatherApp is a single page application where the user can search for a city forecast using a simple reactive input.
+
 
 ## Image preview
 
@@ -9,8 +10,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Build with
 
-- Angular
+- [Angular](https://github.com/angular/angular-cli) version 13.3.5
 - Bootstrap
+
+## Api User
+
+- [Open Weather](https://openweathermap.org/)
 
 ## Development server
 
